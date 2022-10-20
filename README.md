@@ -1,5 +1,8 @@
 # Stoppuhrzeiten erkenne
 
+
+
+
 ## Berschreibung
 Dies ist ein Schulprojekt für das Fach LF12.
 Es soll von Bilderen Zeiten erkannt werden.
