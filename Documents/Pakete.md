@@ -8,6 +8,8 @@
 ## Maschinenlerning
 
 - [tensorflow](https://www.tensorflow.org/learn)
+- [pyttorch](https://github.com/pytorch/pytorch)
+- [scikitlearn](https://scikit-learn.org/stable/tutorial/index.html)
 
 
 ## Info Seiten
