@@ -16,3 +16,4 @@ y_train.head()
 print(str(X_train))
 print(str(y_train))
 
+## funzt nicht, falsche Versionen aktuell
