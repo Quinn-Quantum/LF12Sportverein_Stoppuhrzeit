@@ -7,7 +7,7 @@ from kivy.uix.boxlayout import BoxLayout
 
 red = [1,0,0,1]
 green = [0,1,0,1]
-blue =  [0,0,1,1]
+blue = [0,0,1,1]
 purple = [1,0,1,1]
 
 
