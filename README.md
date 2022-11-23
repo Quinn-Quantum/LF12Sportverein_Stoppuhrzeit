@@ -11,7 +11,7 @@ Es soll von Bilderen Zeiten erkannt werden.
 Es soll eine APP bereit gestellt werden, welche bei Sportveranstaltungen aus einem Foto von einer Stoppuhr die Zeit auf der Uhr erkennt und über eine Schnittstelle bereitstellt.
 
 ## Team
-Maria Siegmann,Lorenz Hankel, Alexander Jetke, Gurgül kauv, Gökmen Demir
+Maria Siegmann,Lorenz Hankel, Alexander Jetke, Gurjit Kaur, Gökmen Demir
 
 ## Git-Hub Repository
 https://github.com/Quinn-Quantum/LF12Sportverein_Stoppuhrzeit
