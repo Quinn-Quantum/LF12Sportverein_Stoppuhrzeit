@@ -10,7 +10,9 @@ from kivy.uix.popup import Popup
 from kivy.uix.textinput import TextInput
 import os
 
-
+#https://www.youtube.com/watch?v=YlRd4rw_vBw
+#https://www.youtube.com/watch?v=U9j2ztt8xvM
+#https://kivy.org/doc/stable/api-kivy.uix.filechooser.html
 
 class LoadDialog(FloatLayout):
     load = ObjectProperty(None)
