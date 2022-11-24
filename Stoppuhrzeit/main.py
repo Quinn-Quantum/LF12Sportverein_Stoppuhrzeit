@@ -1,33 +1,56 @@
-import random
-
 from kivy.app import App
+from kivy.factory import Factory
+from kivy.properties import ObjectProperty
 from kivy.uix.button import Button
+from kivy.uix.floatlayout import FloatLayout
+from kivy.uix.gridlayout import GridLayout
 from kivy.uix.label import Label
 from kivy.uix.boxlayout import BoxLayout
-
-red = [1,0,0,1]
-green = [0,1,0,1]
-blue = [0,0,1,1]
-purple = [1,0,1,1]
+from kivy.uix.popup import Popup
+from kivy.uix.textinput import TextInput
+import os
 
 
-class MainApp(App):
-    def build(self):
-        layout = BoxLayout(padding=10)
-        colors = [red, green, blue, purple]
 
-        for i in range(5):
-            btn = Button(text="Button #%s" % (i + 1),
-                         background_color=random.choice(colors),
-                         size_hint=(.5, .5)
-                         )
+class LoadDialog(FloatLayout):
+    load = ObjectProperty(None)
+    cancel = ObjectProperty(None)
 
-            layout.add_widget(btn)
-        label = Label(text = "Hallo Welt",size_hint=(.5, .5),pos_hint={'center_x': 0, 'center_y': 0}, color = "yellow" )
-        layout.add_widget(label)
-        return layout
 
+class SaveDialog(FloatLayout):
+    text_input = ObjectProperty(None)
+    cancel = ObjectProperty(None)
+
+
+class Root(FloatLayout):
+    loadfile = ObjectProperty(None)
+    text_input = ObjectProperty(None)
+
+    def dismiss_popup(self):
+        self._popup.dismiss()
+
+    def show_load(self):
+        content = LoadDialog(load=self.load, cancel=self.dismiss_popup)
+        self._popup = Popup(title="Load file", content=content,
+                            size_hint=(0.9, 0.9))
+        self._popup.open()
+
+    def load(self, path, filename):
+        with open(os.path.join(path, filename[0])) as stream:
+            self.text_input.text = stream.read()
+
+        self.dismiss_popup()
+
+
+class Editor(App):
+    pass
+    # def build(self):
+    #  return StartBild()
+
+
+Factory.register('Root', cls=Root)
+Factory.register('LoadDialog', cls=LoadDialog)
 
 if __name__ == '__main__':
-    app = MainApp()
+    app = Editor()
     app.run()
