@@ -15,6 +15,9 @@ import os
 #https://kivy.org/doc/stable/api-kivy.uix.filechooser.html
 
 #Class for the <LordDialog> in the editor.kv
+from server import PictureColoredToBlack
+
+
 class LoadDialog(FloatLayout):
     load = ObjectProperty(None)
     cancel = ObjectProperty(None)
@@ -24,6 +27,9 @@ class LoadDialog(FloatLayout):
         try:
             self.ids.my_image.source = filename[0]
             print(filename[0])
+            print("Fee")
+            PictureColoredToBlack.PictureColoredToBlack.ChangeToBlackWhite(self,filename[0])
+            print("Tee")
         except:
             pass
 

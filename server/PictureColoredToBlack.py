@@ -4,6 +4,7 @@ from pathlib import Path
 class PictureColoredToBlack():
     #This Method changes the selected picture into a greyscaled version 
     def ChangeToBlackWhite(self,picture):
+        print("Hallo")
         #sets the Path of the Project to access the image
         #pathPicture = "." + path
         #sets the Download path where to safe the changed picture
