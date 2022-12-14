@@ -15,4 +15,3 @@ class PictureColoredToBlack():
         #Saves the picture into the Download Path
         picture_to_black_and_white.save(downloads_path +'/'+'greyscaled_'+ imageName)
         
-PictureColoredToBlack().ChangeToBlackWhite(".\LF12Sportverein_Stoppuhrzeit\kaneki.jpg");
