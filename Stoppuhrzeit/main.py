@@ -27,9 +27,10 @@ class LoadDialog(FloatLayout):
         try:
             self.ids.my_image.source = filename[0]
             print(filename[0])
-            print("Fee")
+
+            #picture colored to black and whith
             PictureColoredToBlack.PictureColoredToBlack.ChangeToBlackWhite(self,filename[0])
-            print("Tee")
+           
         except:
             pass
 
