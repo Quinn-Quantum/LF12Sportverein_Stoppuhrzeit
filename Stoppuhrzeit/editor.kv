@@ -1,6 +1,6 @@
 #:kivy 1.1.0
 Root:
-    text_input: text_input
+
 
 
     BoxLayout:
@@ -16,9 +16,6 @@ Root:
         BoxLayout:
             size_hint_y: None
             height: 50
-            TextInput:
-                id: text_input
-                text: ''
 
 
 
@@ -32,13 +29,11 @@ Root:
                 pos_hint: {'cent': 3}
                 color: [1,1,0,1]
 
-            TextInput:
-                id: text_input2
-                text: ''
+            Label:
+                id: runtime
+                text: root.run_time
 
-            RstDocument:
-                text: text_input.text
-                show_errors: True
+
 
 
 <LoadDialog>:

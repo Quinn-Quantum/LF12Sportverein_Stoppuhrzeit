@@ -1,9 +1,8 @@
 from kivy.app import App
 from kivy.factory import Factory
-from kivy.properties import ObjectProperty
+from kivy.properties import ObjectProperty, StringProperty
 from kivy.uix.floatlayout import FloatLayout
 from kivy.uix.popup import Popup
-import os
 
 #https://www.youtube.com/watch?v=YlRd4rw_vBw
 #https://www.youtube.com/watch?v=U9j2ztt8xvM
@@ -11,7 +10,6 @@ import os
 
 #Class for the <LordDialog> in the editor.kv
 from server import PictureColoredToBlack
-
 
 class LoadDialog(FloatLayout):
     load = ObjectProperty(None)
@@ -31,6 +29,7 @@ class LoadDialog(FloatLayout):
 class Root(FloatLayout):
     loadfile = ObjectProperty(None)
     text_input = ObjectProperty(None)
+    run_time = StringProperty()
 
 
     def dismiss_popup(self):
@@ -45,11 +44,25 @@ class Root(FloatLayout):
 
     #aktiviert die funktion zum schwarz weiß machen
     def load(self, filename):
+        if len(filename) != 0:
+            file_data_type = filename[0][-3:].lower()
+            if file_data_type != "png" or file_data_type != "jpg":
+                # Changing Uploaded Picture into Greyscaled
+                PictureColoredToBlack.PictureColoredToBlack.ChangeToBlackWhite(self, filename[0])
+                self.run_time = "Hier sollte die Laufzeit stehen"
+                self.dismiss_popup()
+            else:
+                # Error Meldung in TextFeld
+                self.run_time ="falscher datein  Typ"
+                self.dismiss_popup()
+        else:
+            # Error Meldung in TextFeld
+            self.run_time = "extern Fehler"
+            self.dismiss_popup()
 
-        # picture colored to black and whith
-        PictureColoredToBlack.PictureColoredToBlack.ChangeToBlackWhite(self, filename[0])
-        #Schlißt Verzeichniss
-        self.dismiss_popup()
+
+
+
 
 
 
