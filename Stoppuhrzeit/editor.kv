@@ -21,16 +21,6 @@ Root:
                 text: ''
 
 
-        BoxLayout:
-            size_hint_y: None
-            height: 60
-
-            Button:
-                text: 'Bild analysieren'
-                on_press: print("ouch! More gently please")
-
-                background_color:[2, 0, 0, 1]
-
 
         BoxLayout:
             size_hint_y: None
@@ -76,33 +66,6 @@ Root:
 
             Button:
                 text: "Load"
-                on_release: root.load(filechooser.path, filechooser.selection)
+                on_release: Testing.load(filechooser.selection)
 
 
-
-<SaveDialog>:
-    text_input: text_input
-    BoxLayout:
-        size: root.size
-        pos: root.pos
-        orientation: "vertical"
-        FileChooserListView:
-            id: filechooser
-            on_selection: text_input.text = self.selection and self.selection[0] or ''
-
-        TextInput:
-            id: text_input
-            size_hint_y: None
-            height: 30
-            multiline: False
-
-        BoxLayout:
-            size_hint_y: None
-            height: 30
-            Button:
-                text: "Cancel"
-                on_release: root.cancel()
-
-            Button:
-                text: "Save"
-                on_release: root.save(filechooser.path, text_input.text)
