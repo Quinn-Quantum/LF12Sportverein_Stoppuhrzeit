@@ -20,7 +20,7 @@ Root:
             height: 60
             background_color: 2, 0, 0, 1
             Label:
-                text: '       Die Zeit: '
+                text: 'Die Zeit: '
                 size_hint_x: None
                 pos_hint: {'cent': 3}
                 color: [1,1,0,1]
@@ -29,12 +29,8 @@ Root:
                 id: runtime
                 text: root.run_time
 
-
-
-
 <LoadDialog>:
-    id: Testing
-
+    id: select_image
     BoxLayout:
         size: root.size
         pos: root.pos
@@ -47,7 +43,7 @@ Root:
             id: filechooser
             #https://stackoverflow.com/questions/42505450/kivy-change-filechooser-defaul-location
             path:"C:/Users/Otto/Pictures"
-            on_selection: Testing.selected(filechooser.selection)
+            on_selection: select_image.selected(filechooser.selection)
 
 
 
@@ -60,6 +56,6 @@ Root:
 
             Button:
                 text: "Load"
-                on_release: Testing.load(filechooser.selection)
+                on_release: select_image.load(filechooser.selection)
 
 

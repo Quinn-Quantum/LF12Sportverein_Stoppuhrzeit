@@ -69,6 +69,7 @@ class Root(FloatLayout):
 class Editor(App):
     pass
 
+# TODO: Color matching to IMT OSZ
 # Dialog defined in editor.kv
 Factory.register('Root', cls=Root)
 Factory.register('LoadDialog', cls=LoadDialog)
