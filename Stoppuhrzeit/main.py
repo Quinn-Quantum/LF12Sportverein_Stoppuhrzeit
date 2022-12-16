@@ -11,14 +11,14 @@ from server import PictureColoredToBlack
 # https://kivy.org/doc/stable/api-kivy.uix.filechooser.html
 # https://stackoverflow.com/questions/42505450/kivy-change-filechooser-defaul-location
 
-#Class for the LoadDialog part im Layout
+#Class for the LoadDialog part in Layout
 class LoadDialog(FloatLayout):
-    # variable
+    # variables
     load = ObjectProperty(None)
     cancel = ObjectProperty(None)
     selected = ObjectProperty(None)
 
-    # function displays the image in the app and recovers the file ride so that it can be displayed.
+    # function displays the image in the app and recovers the file path so that it can be displayed.
     def selected(self, filename):
         try:
             self.ids.my_image.source = filename[0]
@@ -27,7 +27,7 @@ class LoadDialog(FloatLayout):
             print("File not found")
 
 
-# Class for the Root part im Layout
+# Class for the Root part in Layout
 class Root(FloatLayout):
     # variable
     loadfile = ObjectProperty(None)
@@ -50,7 +50,7 @@ class Root(FloatLayout):
             # Extract file extension
             file_data_type = filename[0][-3:].lower()
             if file_data_type != "png" or file_data_type != "jpg":
-                # Changing Uploaded Picture into Greyscaled
+                # Calls function to change uploaded picture into a modified greyscaled version
                 PictureColoredToBlack.PictureColoredToBlack.ChangeToBlackWhite(self, filename[0])
                 # TODO: Receive and output return from backend
                 # Message in label until access to bot does not exist
@@ -58,22 +58,22 @@ class Root(FloatLayout):
                 self.dismiss_popup()
             else:
                 # Error message in label
-                self.run_time ="falscher datein  Typ"
+                self.run_time ="False filetype! Only .png and .jpg are usable"
                 self.dismiss_popup()
         else:
             # Error message in label
-            self.run_time = "extern Fehler"
+            self.run_time = "Error! no file has been selected"
             self.dismiss_popup()
 
 # must have the same name as the kv-data
 class Editor(App):
     pass
 
-# Dialog defined in editor.kv
+# Dialogs defined in editor.kv
 Factory.register('Root', cls=Root)
 Factory.register('LoadDialog', cls=LoadDialog)
 
-# Startpoint
+# Startpoint/Main Call
 if __name__ == '__main__':
     app = Editor()
     app.run()
