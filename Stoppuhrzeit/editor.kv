@@ -1,8 +1,6 @@
 #:kivy 1.1.0
 Root:
 
-
-
     BoxLayout:
         orientation: 'vertical'
         BoxLayout:
@@ -16,8 +14,6 @@ Root:
         BoxLayout:
             size_hint_y: None
             height: 50
-
-
 
         BoxLayout:
             size_hint_y: None
@@ -38,6 +34,7 @@ Root:
 
 <LoadDialog>:
     id: Testing
+
     BoxLayout:
         size: root.size
         pos: root.pos
@@ -48,6 +45,8 @@ Root:
 
         FileChooserIconView:
             id: filechooser
+            #https://stackoverflow.com/questions/42505450/kivy-change-filechooser-defaul-location
+            path:"C:/Users/Otto/Pictures"
             on_selection: Testing.selected(filechooser.selection)
 
 
