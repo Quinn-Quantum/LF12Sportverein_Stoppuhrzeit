@@ -18,7 +18,7 @@ class LoadDialog(FloatLayout):
     cancel = ObjectProperty(None)
     selected = ObjectProperty(None)
 
-    # function displays the image in the app and recovers the file path so that it can be displayed.
+    # function displays the image in the app and recovers the filepath so that it can be displayed.
     def selected(self, filename):
         try:
             self.ids.my_image.source = filename[0]
@@ -29,7 +29,7 @@ class LoadDialog(FloatLayout):
 
 # Class for the Root part in Layout
 class Root(FloatLayout):
-    # variable
+    # variables
     loadfile = ObjectProperty(None)
     run_time = StringProperty()
 
@@ -38,13 +38,13 @@ class Root(FloatLayout):
 
     #Opens the path to gallery
     def show_load(self):
-        #With content the function load and dismiss_popup can be us in LoadDialog
+        #The functions load and cancel are being added into the LoadDialog 
         content = LoadDialog(load=self.load, cancel=self.dismiss_popup)
         self._popup = Popup(title="Load file", content=content,
                             size_hint=(0.9, 0.9))
         self._popup.open()
 
-    #activates the function to make the image black and white
+    #activates the function to turn the selected picture into a greyscaled version
     def load(self, filename):
         if len(filename) != 0:
             # Extract file extension
@@ -70,6 +70,8 @@ class Editor(App):
     pass
 
 # Dialogs defined in editor.kv
+# TODO: Color matching to IMT OSZ
+# Dialog defined in editor.kv
 Factory.register('Root', cls=Root)
 Factory.register('LoadDialog', cls=LoadDialog)
 
