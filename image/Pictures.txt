@@ -1,2 +1,0 @@
-Anzahl min Bilder: 200
-Test Bilder 10%
