@@ -12,5 +12,5 @@ class PictureColoredToBlack():
         splitted = picture.split("\\")
         imageName = splitted[len(splitted)-1]
         #Saves the picture into the Download Folder 
-        picture_to_black_and_white.save(downloads_path +'/'+'greyscaled_'+ imageName)
+        picture_to_black_and_white.save(downloads_path +'/'+'greyscaled_'+ imageName[:-3] + "png")
         
