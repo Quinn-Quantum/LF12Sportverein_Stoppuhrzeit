@@ -1,5 +1,6 @@
 from PIL import Image
 from pathlib import Path
+import requests
 
 class PictureColoredToBlack():
     #This Method changes the selected picture into a greyscaled version 
@@ -12,5 +13,13 @@ class PictureColoredToBlack():
         splitted = picture.split("\\")
         imageName = splitted[len(splitted)-1]
         #Saves the picture into the Download Folder 
-        picture_to_black_and_white.save(downloads_path +'/'+'greyscaled_'+ imageName[:-3] + "png")
+        picture_to_black_and_white.save(downloads_path +'\\'+'greyscaled_'+ imageName[:-3] + "png")
+        localpath = downloads_path +'\\'+'greyscaled_'+ imageName[:-3] + "png"
+        print("Hallo: "+localpath)
+        serverurl = 'https://bmxertv.de/LF12Sportverein_Stoppuhrzeit_API/view/uploadfile.php' #API ansprechen
+
+        with open(localpath, 'rb') as f:
+            r = requests.post(serverurl, files={'userfile':f})
+
+        print(r.text)
         
