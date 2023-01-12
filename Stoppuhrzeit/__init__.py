@@ -1,2 +1,3 @@
 import ConvertingPictures
+from Server.PictureColoredToBlack import PictureColoredToBlack
 
