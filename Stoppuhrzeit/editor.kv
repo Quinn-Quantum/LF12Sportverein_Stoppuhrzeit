@@ -42,7 +42,8 @@ Root:
         FileChooserIconView:
             id: filechooser
             #https://stackoverflow.com/questions/42505450/kivy-change-filechooser-defaul-location
-            path:"C:/Users/Otto/Pictures"
+            # path:"C:/Users/Otto/Pictures" # LH lieber den HOME Pfad abfragen, Otto gibt's leider nicht auf jedem Gerät.
+            path:"~" # "~" führt automatisch zum Home Verzeichnis des aktiven Nutzers auf den meisten Systemen.
             on_selection: select_image.selected(filechooser.selection)
 
         BoxLayout:

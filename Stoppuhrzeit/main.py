@@ -3,7 +3,8 @@ from kivy.factory import Factory
 from kivy.properties import ObjectProperty, StringProperty
 from kivy.uix.floatlayout import FloatLayout
 from kivy.uix.popup import Popup
-from server import PictureColoredToBlack
+from os.path import expanduser
+from PictureColoredToBlack import PictureColoredToBlack
 
 # sources:
 # https://www.youtube.com/watch?v=YlRd4rw_vBw
