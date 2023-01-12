@@ -1,0 +1,59 @@
+#:kivy 1.1.0
+Root:
+
+    BoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            size_hint_y: None
+            height: 60
+            Button:
+                text: 'Bild auswählen'
+                on_release: root.show_load()
+                background_color:[1, 1, 1, 1]
+
+        BoxLayout:
+            size_hint_y: None
+            height: 50
+
+        BoxLayout:
+            size_hint_y: None
+            height: 60
+            background_color: 2, 0, 0, 1
+            Label:
+                text: 'Die Zeit: '
+                size_hint_x: None
+                pos_hint: {'cent': 3}
+                color: [1,1,0,1]
+
+            Label:
+                id: runtime
+                text: root.run_time
+
+<LoadDialog>:
+    id: select_image
+    BoxLayout:
+        size: root.size
+        pos: root.pos
+        orientation: "horizontal"
+        Image:
+            id: my_image
+            source: ""
+
+        FileChooserIconView:
+            id: filechooser
+            #https://stackoverflow.com/questions/42505450/kivy-change-filechooser-defaul-location
+            path:"C:/Users/Otto/Pictures"
+            on_selection: select_image.selected(filechooser.selection)
+
+        BoxLayout:
+            size_hint_y: None
+            height: 30
+            Button:
+                text: "Cancel"
+                on_release: root.cancel()
+
+            Button:
+                text: "Load"
+                on_release: select_image.load(filechooser.selection)
+
+
