@@ -4,6 +4,7 @@ from kivy.properties import ObjectProperty, StringProperty
 from kivy.uix.floatlayout import FloatLayout
 from kivy.uix.popup import Popup
 from os.path import expanduser
+from PictureColoredToBlack import PictureColoredToBlack as api
 
 # sources:
 # https://www.youtube.com/watch?v=YlRd4rw_vBw
@@ -51,7 +52,7 @@ class Root(FloatLayout):
             file_data_type = filename[0][-3:].lower()
             if file_data_type != "png" or file_data_type != "jpg":
                 # Calls function to change uploaded picture into a modified greyscaled version
-                PictureColoredToBlack().ChangeToBlackWhite(self, filename[0])
+                api.PictureColoredToBlack.ChangeToBlackWhite(self, filename[0])
                 # TODO: Receive and output return from backend
                 # Message in label until access to bot does not exist
                 self.run_time = "Hier sollte die Laufzeit stehen"
