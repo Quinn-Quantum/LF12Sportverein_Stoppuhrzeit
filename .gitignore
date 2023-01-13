@@ -129,6 +129,6 @@ dmypy.json
 .pyre/
 
 # Lorenz Einträge
-gource_skript.txt
+# gource_skripte.txt
 out.ppm
 output.mp4
