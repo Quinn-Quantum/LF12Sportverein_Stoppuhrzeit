@@ -1,15 +1,18 @@
 # Anleitung für die Erstellung von Gource Commit-Aktivitätsvideos
 
 ## Voraussetzungen
+
 - gource (https://gource.io/)
-- ffmpeg (https://ffmpeg.org/download.html)[^1]
+- ffmpeg (https://ffmpeg.org/download.html) [^1]
 - idealerweise Powershell, ansonsten müssen die mitgelieferten Skripte u.U. angepasst werden.
 
 ## Einrichtung
+
 1. ffmpeg installieren und die Binaries dem PATH hinzufügen (Windows Systemumgebungsvariablen > PATH > Neu)
 2. gource installieren mit dem Installer. (Sollte automatisch den PATH füllen.)
 
 ## Verwendung
+
 1. Repository Ordner öffnen
 2. Im Repository Ordner Powershell öffnen
 3. folgendes Skript eingeben (kann natürlich angepasst werden nach Euren Wünschen)
